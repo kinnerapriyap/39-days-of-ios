@@ -81,12 +81,12 @@
 				230E3DA92389242200CE7C19 /* AppDelegate.swift */,
 				230E3DAB2389242200CE7C19 /* SceneDelegate.swift */,
 				230E3DAD2389242200CE7C19 /* ViewController.swift */,
+				230E3DD42389347E00CE7C19 /* DetailViewController.swift */,
 				230E3DAF2389242200CE7C19 /* Main.storyboard */,
 				230E3DB22389242400CE7C19 /* Assets.xcassets */,
 				230E3DB42389242400CE7C19 /* LaunchScreen.storyboard */,
 				230E3DB72389242400CE7C19 /* Info.plist */,
 				230E3DBD2389262500CE7C19 /* Content */,
-				230E3DD42389347E00CE7C19 /* DetailViewController.swift */,
 			);
 			path = "day-1-storm-viewer";
 			sourceTree = "<group>";
