@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var button1: UIButton!
     
     @IBOutlet var button2: UIButton!
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var total = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +56,15 @@ class ViewController: UIViewController {
             score -= 1
         }
         
-        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-        present(ac, animated: true)
+        total -= 1
+        if total == 0 {
+            let ac = UIAlertController(title: title, message: "Your final score is \(score).", preferredStyle: .alert)
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+            present(ac, animated: true)
+        }
     }
 }
 
