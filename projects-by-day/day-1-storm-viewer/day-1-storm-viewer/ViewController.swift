@@ -15,6 +15,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+
         title = "Storm Viewer"
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -24,6 +26,14 @@ class ViewController: UITableViewController {
             if item.hasPrefix("nssl") {
                 pictures.append(item)
             }
+        }
+    }
+    
+    @objc func shareTapped() {
+        if let link = NSURL(string: "http://www.google.com") {
+            let vc = UIActivityViewController(activityItems: ["Check out my app", link], applicationActivities: [])
+            vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+            present(vc, animated: true)
         }
     }
 
