@@ -79,6 +79,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
             }
         }
 
+        let ac = UIAlertController(title: "Blocked!", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        present(ac, animated: true)
         decisionHandler(.cancel)
     }
 }
