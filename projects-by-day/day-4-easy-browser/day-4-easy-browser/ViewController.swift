@@ -22,9 +22,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
-        let url = URL(string: "https://www.hackingwithswift.com")!
-        webView.load(URLRequest(url: url))
-        webView.allowsBackForwardNavigationGestures = true
     }
     
     @objc func openTapped() {
@@ -36,8 +33,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         present(ac, animated: true)
     }
     
-    func openPage(alertAction: UIAlertAction) {
-        
+    func openPage(action: UIAlertAction) {
+        let url = URL(string: "https://" + action.title!)!
+        webView.load(URLRequest(url: url))
+        webView.allowsBackForwardNavigationGestures = true
     }
 }
 
