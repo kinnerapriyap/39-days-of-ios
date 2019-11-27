@@ -62,19 +62,24 @@ class ViewController: UITableViewController {
     
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
-
+        
         let errorTitle: String
         let errorMessage: String
-
+        
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
-                    usedWords.insert(answer, at: 0)
-
-                    let indexPath = IndexPath(row: 0, section: 0)
-                    tableView.insertRows(at: [indexPath], with: .automatic)
-
-                    return
+                    if isValid(word: lowerAnswer) {
+                        usedWords.insert(answer, at: 0)
+                        
+                        let indexPath = IndexPath(row: 0, section: 0)
+                        tableView.insertRows(at: [indexPath], with: .automatic)
+                        
+                        return
+                    } else {
+                        errorTitle = "Word not valid"
+                        errorMessage = "Not a word less than 3 letters or the original word!"
+                    }
                 } else {
                     errorTitle = "Word not recognised"
                     errorMessage = "You can't just make them up, you know!"
@@ -88,7 +93,7 @@ class ViewController: UITableViewController {
             errorTitle = "Word not possible"
             errorMessage = "You can't spell that word from \(title)"
         }
-
+        
         let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
@@ -96,7 +101,7 @@ class ViewController: UITableViewController {
     
     func isPossible(word: String) -> Bool {
         guard var tempWord = title?.lowercased() else { return false }
-
+        
         for letter in word {
             if let position = tempWord.firstIndex(of: letter) {
                 tempWord.remove(at: position)
@@ -104,20 +109,24 @@ class ViewController: UITableViewController {
                 return false
             }
         }
-
+        
         return true
     }
-
+    
     func isOriginal(word: String) -> Bool {
         return !usedWords.contains(word)
     }
-
+    
     func isReal(word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
-
+        
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isValid(word: String) -> Bool {
+        return word != title?.lowercased() && word.utf16.count >= 3
     }
 }
 
