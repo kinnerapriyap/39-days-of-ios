@@ -103,7 +103,7 @@ class ViewController: UITableViewController {
     }
     
     func isOriginal(word: String) -> Bool {
-        return !usedWords.contains(word)
+        return !usedWords.contains(where: { $0.caseInsensitiveCompare(word) == .orderedSame })
     }
     
     func isReal(word: String) -> Bool {
