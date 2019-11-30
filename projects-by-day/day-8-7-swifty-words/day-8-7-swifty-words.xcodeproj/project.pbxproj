@@ -13,6 +13,7 @@
 		233DC3812391EA9B001FC612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233DC37F2391EA9B001FC612 /* Main.storyboard */; };
 		233DC3832391EA9B001FC612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 233DC3822391EA9B001FC612 /* Assets.xcassets */; };
 		233DC3862391EA9B001FC612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233DC3842391EA9B001FC612 /* LaunchScreen.storyboard */; };
+		233DC38E23920D83001FC612 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 233DC38D23920D83001FC612 /* level1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		233DC3822391EA9B001FC612 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		233DC3852391EA9B001FC612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		233DC3872391EA9B001FC612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		233DC38D23920D83001FC612 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				233DC3822391EA9B001FC612 /* Assets.xcassets */,
 				233DC3842391EA9B001FC612 /* LaunchScreen.storyboard */,
 				233DC3872391EA9B001FC612 /* Info.plist */,
+				233DC38D23920D83001FC612 /* level1.txt */,
 			);
 			path = "day-8-7-swifty-words";
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				233DC3862391EA9B001FC612 /* LaunchScreen.storyboard in Resources */,
+				233DC38E23920D83001FC612 /* level1.txt in Resources */,
 				233DC3832391EA9B001FC612 /* Assets.xcassets in Resources */,
 				233DC3812391EA9B001FC612 /* Main.storyboard in Resources */,
 			);
