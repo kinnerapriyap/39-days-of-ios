@@ -98,6 +98,25 @@ class ViewController: UIViewController {
             buttonsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20)
         ])
         
+        // set some values for the width and height of each button
+        let width = 150
+        let height = 80
+        
+        // create 20 buttons as a 4x5 grid
+        for row in 0..<4 {
+            for col in 0..<5 {
+                let letterButton = UIButton(type: .system)
+                letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+                letterButton.setTitle("WWW", for: .normal)
+                
+                let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
+                letterButton.frame = frame
+                
+                buttonsView.addSubview(letterButton)
+                letterButtons.append(letterButton)
+            }
+        }
+        
         cluesLabel.backgroundColor = .red
         answersLabel.backgroundColor = .blue
         buttonsView.backgroundColor = .green
