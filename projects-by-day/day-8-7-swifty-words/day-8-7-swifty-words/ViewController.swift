@@ -116,10 +116,6 @@ class ViewController: UIViewController {
                 letterButtons.append(letterButton)
             }
         }
-        
-        cluesLabel.backgroundColor = .red
-        answersLabel.backgroundColor = .blue
-        buttonsView.backgroundColor = .green
     }
     
     override func viewDidLoad() {
