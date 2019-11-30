@@ -158,13 +158,22 @@ class ViewController: UIViewController {
 
             currentAnswer.text = ""
             score += 1
+            
+            var remainingButtons = letterButtons.count
+            for button in letterButtons {
+                if button.isHidden == true {
+                    remainingButtons -= 1
+                }
+            }
 
-            if score % 7 == 0 {
+            if remainingButtons == 0 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
         } else {
+            score -= 1
+            
             let ac = UIAlertController(title: "Incorrect guess", message: nil, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Try again", style: .default))
             present(ac, animated: true)
