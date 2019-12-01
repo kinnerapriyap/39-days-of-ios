@@ -22,7 +22,7 @@ class ViewController: UITableViewController {
         ]
         
         let urlString: String
-
+        
         if navigationController?.tabBarItem.tag == 0 {
             // urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
@@ -31,13 +31,15 @@ class ViewController: UITableViewController {
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
         
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                parse(json: data)
-                return
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    self.parse(json: data)
+                    return
+                }
             }
         }
-
+        
         showError()
     }
     
@@ -56,10 +58,10 @@ class ViewController: UITableViewController {
             guard let petitions = self?.petitions else { return }
             for petition in petitions {
                 if petition.title.contains(searchTerm) || petition.body.contains(searchTerm) {
-                     self?.filteredPetitions.append(petition)
+                    self?.filteredPetitions.append(petition)
                 }
             }
-             self?.tableView.reloadData()
+            self?.tableView.reloadData()
         }
         ac.addAction(submitAction)
         present(ac, animated: true)
