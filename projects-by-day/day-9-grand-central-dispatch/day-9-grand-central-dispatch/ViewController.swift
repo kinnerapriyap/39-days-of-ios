@@ -21,26 +21,43 @@ class ViewController: UITableViewController {
             UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchByInput))
         ]
         
+        performSelector(inBackground: #selector(fetchJSON), with: nil)
+    }
+    
+    @objc func fetchJSON() {
         let urlString: String
         
         if navigationController?.tabBarItem.tag == 0 {
-            // urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
-            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+            urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
         } else {
-            // urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
-            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+            urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let url = URL(string: urlString) {
-                if let data = try? Data(contentsOf: url) {
-                    self.parse(json: data)
-                    return
-                }
+        if let url = URL(string: urlString) {
+            if let data = try? Data(contentsOf: url) {
+                parse(json: data)
+                return
             }
-
-            self.showError()
         }
+        
+        performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+    }
+    
+    func parse(json: Data) {
+        let decoder = JSONDecoder()
+        
+        if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
+            petitions = jsonPetitions.results
+            tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+        } else {
+            performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+        }
+    }
+    
+    @objc func showError() {
+        let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
     @objc func creditsTapped() {
@@ -83,26 +100,6 @@ class ViewController: UITableViewController {
         let vc = DetailViewController()
         vc.detailItem = filteredPetitions[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func parse(json: Data) {
-        let decoder = JSONDecoder()
-        
-        if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
-            petitions = jsonPetitions.results
-            filteredPetitions = petitions
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func showError() {
-        DispatchQueue.main.async {
-            let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(ac, animated: true)
-        }
     }
 }
 
