@@ -13,7 +13,7 @@
 		236E18AF2394A1DB00EA978C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236E18AD2394A1DB00EA978C /* Main.storyboard */; };
 		236E18B12394A1DB00EA978C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236E18B02394A1DB00EA978C /* Assets.xcassets */; };
 		236E18B42394A1DB00EA978C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236E18B22394A1DB00EA978C /* LaunchScreen.storyboard */; };
-		236E18BC2394A7F300EA978C /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E18BB2394A7F300EA978C /* PersonCell.swift */; };
+		236E19B52394ABF500EA978C /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E19B42394ABF500EA978C /* PersonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		236E18B02394A1DB00EA978C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236E18B32394A1DB00EA978C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		236E18B52394A1DB00EA978C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		236E18BB2394A7F300EA978C /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		236E19B42394ABF500EA978C /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +64,8 @@
 				236E18AD2394A1DB00EA978C /* Main.storyboard */,
 				236E18B02394A1DB00EA978C /* Assets.xcassets */,
 				236E18B22394A1DB00EA978C /* LaunchScreen.storyboard */,
-				236E18BB2394A7F300EA978C /* PersonCell.swift */,
 				236E18B52394A1DB00EA978C /* Info.plist */,
+				236E19B42394ABF500EA978C /* PersonCell.swift */,
 			);
 			path = "day-10-names-to-faces";
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			files = (
 				236E18AC2394A1DB00EA978C /* ViewController.swift in Sources */,
 				236E18A82394A1DB00EA978C /* AppDelegate.swift in Sources */,
-				236E18BC2394A7F300EA978C /* PersonCell.swift in Sources */,
+				236E19B52394ABF500EA978C /* PersonCell.swift in Sources */,
 				236E18AA2394A1DB00EA978C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
