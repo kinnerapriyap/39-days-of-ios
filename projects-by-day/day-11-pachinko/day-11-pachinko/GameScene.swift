@@ -35,6 +35,7 @@ class GameScene: SKScene {
             ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
             ball.physicsBody?.restitution = 0.4
             ball.position = location
+            ball.name = "ball"
             addChild(ball)
         }
     }
@@ -50,18 +51,23 @@ class GameScene: SKScene {
     func makeSlot(at position: CGPoint, isGood: Bool) {
         var slotBase: SKSpriteNode
         var slotGlow: SKSpriteNode
-
+        
         if isGood {
             slotBase = SKSpriteNode(imageNamed: "slotBaseGood")
             slotGlow = SKSpriteNode(imageNamed: "slotGlowGood")
+            slotBase.name = "good"
         } else {
             slotBase = SKSpriteNode(imageNamed: "slotBaseBad")
             slotGlow = SKSpriteNode(imageNamed: "slotGlowBad")
+            slotBase.name = "bad"
         }
-
+        
         slotBase.position = position
         slotGlow.position = position
-
+        
+        slotBase.physicsBody = SKPhysicsBody(rectangleOf: slotBase.size)
+        slotBase.physicsBody?.isDynamic = false
+        
         addChild(slotBase)
         addChild(slotGlow)
         
