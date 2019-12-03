@@ -66,6 +66,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
+            if (location.y < 500) {
+                let ac = UIAlertController(title: "Click on top of screen to create ball", message: nil, preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Okay", style: .cancel))
+                self.view?.window?.rootViewController?.present(ac, animated: true, completion: nil)
+                return
+            }
+            
             let objects = nodes(at: location)
             
             if objects.contains(editLabel) {
