@@ -11,10 +11,17 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var scoreLabel: SKLabelNode!
+    var ballsLeftLabel: SKLabelNode!
     
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
+    var ballsLeft = 5 {
+        didSet {
+            ballsLeftLabel.text = "Balls left: \(ballsLeft)"
         }
     }
     
@@ -57,6 +64,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.position = CGPoint(x: 980, y: 700)
         addChild(scoreLabel)
         
+        ballsLeftLabel = SKLabelNode(fontNamed: "Chalkduster")
+        ballsLeftLabel.text = "Balls left: 5"
+        ballsLeftLabel.horizontalAlignmentMode = .right
+        ballsLeftLabel.position = CGPoint(x: 500, y: 700)
+        addChild(ballsLeftLabel)
+        
         editLabel = SKLabelNode(fontNamed: "Chalkduster")
         editLabel.text = "Edit"
         editLabel.position = CGPoint(x: 80, y: 700)
@@ -66,12 +79,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
-            if (location.y < 500) {
-                let ac = UIAlertController(title: "Click on top of screen to create ball", message: nil, preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "Okay", style: .cancel))
-                self.view?.window?.rootViewController?.present(ac, animated: true, completion: nil)
-                return
-            }
             
             let objects = nodes(at: location)
             
@@ -84,12 +91,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     let box = SKSpriteNode(color: UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1), size: size)
                     box.zRotation = CGFloat.random(in: 0...3)
                     box.position = location
+                    box.name = "box"
                     
                     box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
                     box.physicsBody?.isDynamic = false
                     
                     addChild(box)
                 } else {
+                    if (location.y < 500) {
+                        let ac = UIAlertController(title: "Click on top of screen to create ball", message: nil, preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "Okay", style: .cancel))
+                        self.view?.window?.rootViewController?.present(ac, animated: true, completion: nil)
+                        return
+                    } else if ballsLeft == 0 {
+                        let ac = UIAlertController(title: "No balls left :(", message: nil, preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "Okay", style: .cancel))
+                        self.view?.window?.rootViewController?.present(ac, animated: true, completion: nil)
+                        return
+                    }
                     // create a ball
                     let colors = ["Blue", "Yellow", "Purple", "Grey", "Red", "Cyan", "Green"]
                     let imageName = "ball\(colors.randomElement() ?? "ballRed")"
@@ -100,6 +119,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     ball.position = location
                     ball.name = "ball"
                     addChild(ball)
+                    ballsLeft -= 1
                 }
             }
         }
@@ -120,9 +140,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if object.name == "good" {
             destroy(ball: ball)
             score += 1
+            ballsLeft += 1
         } else if object.name == "bad" {
             destroy(ball: ball)
             score -= 1
+        } else if object.name == "box" {
+            object.removeFromParent()
         }
     }
     
