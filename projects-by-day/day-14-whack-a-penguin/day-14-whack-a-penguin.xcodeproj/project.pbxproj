@@ -22,6 +22,7 @@
 		237701EF239BCD48000428EF /* penguinGood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 237701E7239BCD48000428EF /* penguinGood@2x.png */; };
 		237701F0239BCD48000428EF /* whackMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 237701E8239BCD48000428EF /* whackMask@2x.png */; };
 		237701F1239BCD48000428EF /* whackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 237701E9239BCD48000428EF /* whackBackground@2x.png */; };
+		237701F3239BCE39000428EF /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237701F2239BCE39000428EF /* WhackSlot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		237701E7239BCD48000428EF /* penguinGood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "penguinGood@2x.png"; sourceTree = "<group>"; };
 		237701E8239BCD48000428EF /* whackMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackMask@2x.png"; sourceTree = "<group>"; };
 		237701E9239BCD48000428EF /* whackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackBackground@2x.png"; sourceTree = "<group>"; };
+		237701F2239BCE39000428EF /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				237701D8239BCCE4000428EF /* LaunchScreen.storyboard */,
 				237701DB239BCCE4000428EF /* Info.plist */,
 				237701E1239BCD48000428EF /* Content */,
+				237701F2239BCE39000428EF /* WhackSlot.swift */,
 			);
 			path = "day-14-whack-a-penguin";
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				237701D0239BCCE3000428EF /* GameScene.swift in Sources */,
 				237701D2239BCCE3000428EF /* GameViewController.swift in Sources */,
+				237701F3239BCE39000428EF /* WhackSlot.swift in Sources */,
 				237701CA239BCCE3000428EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kinnerapriyap.day-14-whack-a-penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -354,7 +358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kinnerapriyap.day-14-whack-a-penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
