@@ -56,18 +56,18 @@ class GameScene: SKScene {
             if !whackSlot.isVisible { continue }
             if whackSlot.isHit { continue }
             whackSlot.hit()
-
+            
             if node.name == "charFriend" {
                 // they shouldn't have whacked this penguin
                 score -= 5
-
+                
                 run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
             } else if node.name == "charEnemy" {
                 // they should have whacked this one
                 whackSlot.charNode.xScale = 0.85
                 whackSlot.charNode.yScale = 0.85
                 score += 1
-
+                
                 run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
             }
         }
@@ -82,17 +82,21 @@ class GameScene: SKScene {
     
     func createEnemy() {
         numRounds += 1
-
+        
         if numRounds >= 30 {
             for slot in slots {
                 slot.hide()
             }
-
+            
             let gameOver = SKSpriteNode(imageNamed: "gameOver")
             gameOver.position = CGPoint(x: 512, y: 384)
             gameOver.zPosition = 1
             addChild(gameOver)
-
+            let gameOverScore = SKLabelNode(text: "Final score: \(score)")
+            gameOverScore.position = CGPoint(x: 512, y: 300)
+            gameOverScore.zPosition = 1
+            addChild(gameOverScore)
+            
             return
         }
         
