@@ -11,22 +11,27 @@ import UIKit
 class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var pictures = [String]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-
+        
         title = "Storm Viewer"
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path).sorted()
-
+        
+        var countDict = [String: Int]()
+        
         for item in items {
             if item.hasPrefix("nssl") {
                 pictures.append(item)
             }
+            countDict[item] = 0
         }
+        let defaults = UserDefaults.standard
+        defaults.set(countDict, forKey: "viewCount")
     }
     
     @objc func shareTapped() {
@@ -51,6 +56,12 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            let defaults = UserDefaults.standard
+            if var countDict = defaults.object(forKey:"viewCount") as? [String: Int] {
+                countDict[pictures[indexPath.row]]! += 1
+                vc.viewCount = "View count = \(countDict[pictures[indexPath.row]] ?? 0)"
+                defaults.set(countDict, forKey: "viewCount")
+            }
             vc.selectedImage = pictures[indexPath.row]
             vc.pageTitle = "\(indexPath.row + 1) of \(pictures.count)"
             navigationController?.pushViewController(vc, animated: true)
