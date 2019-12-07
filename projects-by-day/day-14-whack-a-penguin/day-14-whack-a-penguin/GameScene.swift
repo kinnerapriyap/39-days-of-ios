@@ -83,7 +83,7 @@ class GameScene: SKScene {
     func createEnemy() {
         numRounds += 1
         
-        if numRounds >= 30 {
+        if numRounds >= 10 {
             for slot in slots {
                 slot.hide()
             }
@@ -96,6 +96,7 @@ class GameScene: SKScene {
             gameOverScore.position = CGPoint(x: 512, y: 300)
             gameOverScore.zPosition = 1
             addChild(gameOverScore)
+            run(SKAction.playSoundFileNamed("gameOverRecording.m4a", waitForCompletion: false))
             
             return
         }
