@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var intensity: UISlider!
     
+    @IBOutlet weak var changeFilterLabel: UIButton!
+    
     var currentImage: UIImage!
     var context: CIContext!
     var currentFilter: CIFilter!
@@ -63,15 +65,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func setFilter(action: UIAlertAction) {
         // make sure we have a valid image before continuing!
         guard currentImage != nil else { return }
-
+        
         // safely read the alert action's title
         guard let actionTitle = action.title else { return }
-
+        
         currentFilter = CIFilter(name: actionTitle)
-
+        
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-
+        
         applyProcessing()
     }
     
@@ -82,7 +84,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             present(ac, animated: true)
             return
         }
-
+        
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
@@ -105,16 +107,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func applyProcessing() {
         let inputKeys = currentFilter.inputKeys
-
+        
         if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey) }
         if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(intensity.value * 200, forKey: kCIInputRadiusKey) }
         if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(intensity.value * 10, forKey: kCIInputScaleKey) }
         if inputKeys.contains(kCIInputCenterKey) { currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey) }
-
+        
         if let cgimg = context.createCGImage(currentFilter.outputImage!, from: currentFilter.outputImage!.extent) {
             let processedImage = UIImage(cgImage: cgimg)
             self.imageView.image = processedImage
         }
+        
+        changeFilterLabel.setTitle(currentFilter.name, for: .normal)
     }
 }
 
