@@ -16,6 +16,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(changeMapType))
+        
         let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics.")
         let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "Founded over a thousand years ago.")
         let paris = Capital(title: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508), info: "Often called the City of Light.")
@@ -23,6 +25,28 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let washington = Capital(title: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667), info: "Named after George himself.")
         
         mapView.addAnnotations([london, oslo, paris, rome, washington])
+    }
+    
+    @objc func changeMapType() {
+        let ac = UIAlertController(title: "Choose map type", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Standard", style: .default, handler: handleMapType))
+        ac.addAction(UIAlertAction(title: "Satellite", style: .default, handler: handleMapType))
+        ac.addAction(UIAlertAction(title: "Hybrid", style: .default, handler: handleMapType))
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    private func handleMapType(_ action: UIAlertAction) {
+        switch action.title {
+        case "Standard":
+            mapView.mapType = MKMapType.standard
+        case "Satellite":
+            mapView.mapType = MKMapType.satellite
+        case "Hybrid":
+            mapView.mapType = MKMapType.hybrid
+        default:
+            mapView.mapType = MKMapType.standard
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
