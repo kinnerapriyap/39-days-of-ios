@@ -112,6 +112,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(explosion)
         
         player.removeFromParent()
+        gameTimer?.invalidate()
+        gameTimer = nil
         
         isGameOver = true
     }
