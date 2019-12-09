@@ -21,7 +21,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     let possibleEnemies = ["ball", "hammer", "tv"]
-    var isGameOver = false
+    var isGameOver = false {
+        didSet {
+            if isGameOver {
+                showAlert()
+            }
+        }
+    }
     var gameTimer: Timer?
     
     override func didMove(to view: SKView) {
@@ -92,7 +98,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.position = location
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        makeExplosionAndEndGame()
+    }
+    
     func didBegin(_ contact: SKPhysicsContact) {
+        makeExplosionAndEndGame()
+    }
+    
+    func makeExplosionAndEndGame() {
         let explosion = SKEmitterNode(fileNamed: "explosion")!
         explosion.position = player.position
         addChild(explosion)
@@ -100,5 +114,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.removeFromParent()
         
         isGameOver = true
+    }
+    
+    func showAlert() {
+        let ac = UIAlertController(title: "Game over!", message: "Your final score is \(score).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Restart", style: .default, handler: restart))
+        view?.window?.rootViewController?.present(ac, animated: true)
+    }
+    
+    func restart(action: UIAlertAction) {
+        for node in children {
+            node.removeFromParent()
+        }
+        
+        player = SKSpriteNode(imageNamed: "player")
+        player.position = CGPoint(x: 100, y: 384)
+        player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
+        player.physicsBody?.contactTestBitMask = 1
+        addChild(player)
+        
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
     }
 }
