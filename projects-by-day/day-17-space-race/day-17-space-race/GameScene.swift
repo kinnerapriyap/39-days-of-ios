@@ -39,12 +39,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(starfield)
         starfield.zPosition = -1
         
-        player = SKSpriteNode(imageNamed: "player")
-        player.position = CGPoint(x: 100, y: 384)
-        player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
-        player.physicsBody?.contactTestBitMask = 1
-        addChild(player)
-        
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.position = CGPoint(x: 16, y: 16)
         scoreLabel.horizontalAlignmentMode = .left
@@ -55,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsWorld.contactDelegate = self
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        restart(action: nil)
     }
     
     @objc func createEnemy() {
@@ -124,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view?.window?.rootViewController?.present(ac, animated: true)
     }
     
-    func restart(action: UIAlertAction) {
+    func restart(action: UIAlertAction?) {
         for node in children {
             node.removeFromParent()
         }
