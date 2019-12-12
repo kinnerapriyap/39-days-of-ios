@@ -13,7 +13,35 @@
 		23D28D5523A231040002C66B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D28D5323A231040002C66B /* Main.storyboard */; };
 		23D28D5723A231050002C66B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D28D5623A231050002C66B /* Assets.xcassets */; };
 		23D28D5A23A231050002C66B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D28D5823A231050002C66B /* LaunchScreen.storyboard */; };
+		23D28D6823A23D730002C66B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D28D6723A23D730002C66B /* Media.xcassets */; };
+		23D28D6A23A23D730002C66B /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D28D6923A23D730002C66B /* ActionViewController.swift */; };
+		23D28D6D23A23D730002C66B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D28D6B23A23D730002C66B /* MainInterface.storyboard */; };
+		23D28D7123A23D730002C66B /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 23D28D6523A23D730002C66B /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23D28D6F23A23D730002C66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23D28D4223A231040002C66B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23D28D6423A23D730002C66B;
+			remoteInfo = Extension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23D28D7523A23D730002C66B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				23D28D7123A23D730002C66B /* Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		23D28D4A23A231040002C66B /* day-19-javascript-injection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "day-19-javascript-injection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +52,22 @@
 		23D28D5623A231050002C66B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23D28D5923A231050002C66B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23D28D5B23A231050002C66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23D28D6523A23D730002C66B /* Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D28D6723A23D730002C66B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		23D28D6923A23D730002C66B /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		23D28D6C23A23D730002C66B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		23D28D6E23A23D730002C66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		23D28D4723A231040002C66B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D28D6223A23D730002C66B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				23D28D4C23A231040002C66B /* day-19-javascript-injection */,
+				23D28D6623A23D730002C66B /* Extension */,
 				23D28D4B23A231040002C66B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				23D28D4A23A231040002C66B /* day-19-javascript-injection.app */,
+				23D28D6523A23D730002C66B /* Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +109,17 @@
 			path = "day-19-javascript-injection";
 			sourceTree = "<group>";
 		};
+		23D28D6623A23D730002C66B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				23D28D6723A23D730002C66B /* Media.xcassets */,
+				23D28D6923A23D730002C66B /* ActionViewController.swift */,
+				23D28D6B23A23D730002C66B /* MainInterface.storyboard */,
+				23D28D6E23A23D730002C66B /* Info.plist */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +130,34 @@
 				23D28D4623A231040002C66B /* Sources */,
 				23D28D4723A231040002C66B /* Frameworks */,
 				23D28D4823A231040002C66B /* Resources */,
+				23D28D7523A23D730002C66B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				23D28D7023A23D730002C66B /* PBXTargetDependency */,
 			);
 			name = "day-19-javascript-injection";
 			productName = "day-19-javascript-injection";
 			productReference = 23D28D4A23A231040002C66B /* day-19-javascript-injection.app */;
 			productType = "com.apple.product-type.application";
+		};
+		23D28D6423A23D730002C66B /* Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23D28D7223A23D730002C66B /* Build configuration list for PBXNativeTarget "Extension" */;
+			buildPhases = (
+				23D28D6123A23D730002C66B /* Sources */,
+				23D28D6223A23D730002C66B /* Frameworks */,
+				23D28D6323A23D730002C66B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension;
+			productName = Extension;
+			productReference = 23D28D6523A23D730002C66B /* Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +170,9 @@
 				ORGANIZATIONNAME = kinnerapriyap;
 				TargetAttributes = {
 					23D28D4923A231040002C66B = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					23D28D6423A23D730002C66B = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
@@ -116,6 +191,7 @@
 			projectRoot = "";
 			targets = (
 				23D28D4923A231040002C66B /* day-19-javascript-injection */,
+				23D28D6423A23D730002C66B /* Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +204,15 @@
 				23D28D5A23A231050002C66B /* LaunchScreen.storyboard in Resources */,
 				23D28D5723A231050002C66B /* Assets.xcassets in Resources */,
 				23D28D5523A231040002C66B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D28D6323A23D730002C66B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D28D6823A23D730002C66B /* Media.xcassets in Resources */,
+				23D28D6D23A23D730002C66B /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +229,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23D28D6123A23D730002C66B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D28D6A23A23D730002C66B /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23D28D7023A23D730002C66B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23D28D6423A23D730002C66B /* Extension */;
+			targetProxy = 23D28D6F23A23D730002C66B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		23D28D5323A231040002C66B /* Main.storyboard */ = {
@@ -161,6 +262,14 @@
 				23D28D5923A231050002C66B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		23D28D6B23A23D730002C66B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23D28D6C23A23D730002C66B /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,6 +392,7 @@
 		23D28D5F23A231050002C66B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "day-19-javascript-injection/Info.plist";
@@ -300,6 +410,7 @@
 		23D28D6023A231050002C66B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "day-19-javascript-injection/Info.plist";
@@ -309,6 +420,42 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kinnerapriyap.day-19-javascript-injection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		23D28D7323A23D730002C66B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kinnerapriyap.day-19-javascript-injection.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		23D28D7423A23D730002C66B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kinnerapriyap.day-19-javascript-injection.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,6 +478,15 @@
 			buildConfigurations = (
 				23D28D5F23A231050002C66B /* Debug */,
 				23D28D6023A231050002C66B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23D28D7223A23D730002C66B /* Build configuration list for PBXNativeTarget "Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D28D7323A23D730002C66B /* Debug */,
+				23D28D7423A23D730002C66B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
