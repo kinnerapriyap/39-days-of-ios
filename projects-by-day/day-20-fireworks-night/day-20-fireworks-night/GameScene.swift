@@ -31,6 +31,8 @@ class GameScene: SKScene {
         scoreLabel.horizontalAlignmentMode = .left
         addChild(scoreLabel)
         
+        score = 0
+        
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
         background.blendMode = .replace
