@@ -72,11 +72,13 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
                 // the user swiped to unlock
-                print("Default identifier")
+                let alertController = UIAlertController(title: "Default identifier", message: nil, preferredStyle: .alert)
+                self.present(alertController, animated: true, completion: nil)
 
             case "show":
                 // the user tapped our "show more info…" button
-                print("Show more information…")
+                let alertController = UIAlertController(title: "Show more information…", message: nil, preferredStyle: .alert)
+                self.present(alertController, animated: true, completion: nil)
 
             default:
                 break
