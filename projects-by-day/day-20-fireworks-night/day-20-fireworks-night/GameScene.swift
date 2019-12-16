@@ -11,6 +11,16 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    var allowedLaunches = 3
+    
+    var gameOverLabel: SKLabelNode!
+    var gameOver = false {
+        didSet {
+            gameTimer?.invalidate()
+            gameOverLabel.text = "Game over!"
+        }
+    }
+    
     var gameTimer: Timer?
     var fireworks = [SKNode]()
     
@@ -33,6 +43,11 @@ class GameScene: SKScene {
         
         score = 0
         
+        gameOverLabel = SKLabelNode(fontNamed: "Chalkduster")
+        gameOverLabel.position = CGPoint(x: 512, y: 384)
+        gameOverLabel.horizontalAlignmentMode = .center
+        addChild(gameOverLabel)
+        
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
         background.blendMode = .replace
@@ -43,6 +58,11 @@ class GameScene: SKScene {
     }
     
     @objc func launchFireworks() {
+        if allowedLaunches == 0 {
+            gameOver = true
+            return
+        }
+        
         let movementAmount: CGFloat = 1800
         
         switch Int.random(in: 0...3) {
@@ -81,6 +101,8 @@ class GameScene: SKScene {
         default:
             break
         }
+        
+        allowedLaunches -= 1
     }
     
     func createFirework(xMovement: CGFloat, x: Int, y: Int) {
