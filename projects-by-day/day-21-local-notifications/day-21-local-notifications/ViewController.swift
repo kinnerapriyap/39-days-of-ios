@@ -31,6 +31,12 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func scheduleLocal() {
+        if let timeInterval = TimeInterval(exactly: 5) {
+            scheduleLocalNotification(timeInterval)
+        }
+    }
+    
+    func scheduleLocalNotification(_ timeInterval: TimeInterval) {
         registerCategories()
         
         let center = UNUserNotificationCenter.current()
@@ -46,7 +52,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         dateComponents.hour = 10
         dateComponents.minute = 30
         //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
@@ -57,7 +63,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         center.delegate = self
 
         let show = UNNotificationAction(identifier: "show", title: "Tell me more…", options: .foreground)
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+        let remind = UNNotificationAction(identifier: "remind", title: "Remind me later", options: .foreground)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show, remind], intentIdentifiers: [])
 
         center.setNotificationCategories([category])
     }
@@ -79,6 +86,12 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                 // the user tapped our "show more info…" button
                 let alertController = UIAlertController(title: "Show more information…", message: nil, preferredStyle: .alert)
                 self.present(alertController, animated: true, completion: nil)
+                
+            case "remind":
+                // show alert in 24 houra
+                if let timeInterval = TimeInterval(exactly: 86400) {
+                    scheduleLocalNotification(timeInterval)
+                }
 
             default:
                 break
