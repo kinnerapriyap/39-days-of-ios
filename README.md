@@ -8,4 +8,4 @@ _Start date_: Nov 23, 2019
 
 _Expected end date_: Dec 31, 2019
 
-**Status**: Day 17 _(last updated Dec 9, 2019)_
+**Status**: Day 25 _(last updated Dec 17, 2019)_
