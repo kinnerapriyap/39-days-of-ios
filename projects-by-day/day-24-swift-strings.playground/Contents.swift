@@ -26,10 +26,17 @@ extension String {
         guard let firstLetter = self.first else { return "" }
         return firstLetter.uppercased() + self.dropFirst()
     }
+    
+    var isNumeric: Bool {
+        guard Double(self) != nil else { return false }
+        return true
+    }
 }
 var name = "Hello playground"
 
 let updatedName = name.withPrefix("cat")
+
+let isNameNumeric = name.isNumeric
 
 let letter = name[3]
 
