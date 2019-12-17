@@ -21,10 +21,22 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         
         title = "Selfie Share"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(importPicture))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showAllDevices))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showConnectionPrompt))
         
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession?.delegate = self
+    }
+    
+    @objc func showAllDevices() {
+        guard let mcSession = mcSession else { return }
+        var str = "Connected to:\n"
+        for peer in mcSession.connectedPeers {
+            str.append(peer.displayName+" \n")
+        }
+        let ac = UIAlertController(title: str, message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
     }
     
     @objc func showConnectionPrompt() {
@@ -89,6 +101,7 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         case .notConnected:
             print("Not Connected: \(peerID.displayName)")
             let ac = UIAlertController(title: "\(peerID.displayName) has disconnected", message: nil, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
             present(ac, animated: true)
 
         @unknown default:
