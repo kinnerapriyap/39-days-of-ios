@@ -31,12 +31,20 @@ extension String {
         guard Double(self) != nil else { return false }
         return true
     }
+    
+    var lines: [String] {
+        return self.split(separator: "\n").map({ (substring) in
+            return String(substring)
+        })
+    }
 }
 var name = "Hello playground"
 
 let updatedName = name.withPrefix("cat")
 
 let isNameNumeric = name.isNumeric
+
+let nameLines = name.lines
 
 let letter = name[3]
 
