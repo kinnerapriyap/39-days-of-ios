@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		233B1EF223C2DC3600028A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233B1EF123C2DC3600028A50 /* AppDelegate.swift */; };
+		233B1EF423C2DC3600028A50 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 233B1EF323C2DC3600028A50 /* GameScene.sks */; };
+		233B1EF823C2DC3600028A50 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233B1EF723C2DC3600028A50 /* GameScene.swift */; };
+		233B1EFA23C2DC3600028A50 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233B1EF923C2DC3600028A50 /* GameViewController.swift */; };
+		233B1EFD23C2DC3600028A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233B1EFB23C2DC3600028A50 /* Main.storyboard */; };
+		233B1EFF23C2DC3800028A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 233B1EFE23C2DC3800028A50 /* Assets.xcassets */; };
+		233B1F0223C2DC3800028A50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F0023C2DC3800028A50 /* LaunchScreen.storyboard */; };
+		233B1F1B23C2DD0800028A50 /* sliceFuse.sks in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F0A23C2DD0800028A50 /* sliceFuse.sks */; };
+		233B1F1C23C2DD0800028A50 /* sliceLife@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F0B23C2DD0800028A50 /* sliceLife@2x.png */; };
+		233B1F1D23C2DD0800028A50 /* sliceBomb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F0C23C2DD0800028A50 /* sliceBomb@2x.png */; };
+		233B1F1E23C2DD0800028A50 /* sliceLifeGone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F0D23C2DD0800028A50 /* sliceLifeGone@2x.png */; };
+		233B1F1F23C2DD0800028A50 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F0E23C2DD0800028A50 /* spark.png */; };
+		233B1F2023C2DD0800028A50 /* wrong.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F0F23C2DD0800028A50 /* wrong.caf */; };
+		233B1F2123C2DD0800028A50 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1023C2DD0800028A50 /* whack.caf */; };
+		233B1F2223C2DD0800028A50 /* launch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1123C2DD0800028A50 /* launch.caf */; };
+		233B1F2323C2DD0800028A50 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1223C2DD0800028A50 /* explosion.caf */; };
+		233B1F2423C2DD0800028A50 /* sliceBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1323C2DD0800028A50 /* sliceBackground@2x.png */; };
+		233B1F2523C2DD0800028A50 /* sliceHitEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1423C2DD0800028A50 /* sliceHitEnemy.sks */; };
+		233B1F2623C2DD0800028A50 /* sliceBombFuse.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1523C2DD0800028A50 /* sliceBombFuse.caf */; };
+		233B1F2723C2DD0800028A50 /* sliceHitBomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1623C2DD0800028A50 /* sliceHitBomb.sks */; };
+		233B1F2823C2DD0800028A50 /* penguin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1723C2DD0800028A50 /* penguin@2x.png */; };
+		233B1F2923C2DD0800028A50 /* swoosh3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1823C2DD0800028A50 /* swoosh3.caf */; };
+		233B1F2A23C2DD0800028A50 /* swoosh2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1923C2DD0800028A50 /* swoosh2.caf */; };
+		233B1F2B23C2DD0800028A50 /* swoosh1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F1A23C2DD0800028A50 /* swoosh1.caf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		233B1EEE23C2DC3600028A50 /* day-23-swifty-ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "day-23-swifty-ninja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		233B1EF123C2DC3600028A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		233B1EF323C2DC3600028A50 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		233B1EF723C2DC3600028A50 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		233B1EF923C2DC3600028A50 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		233B1EFC23C2DC3600028A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		233B1EFE23C2DC3800028A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		233B1F0123C2DC3800028A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		233B1F0323C2DC3800028A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		233B1F0A23C2DD0800028A50 /* sliceFuse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceFuse.sks; sourceTree = "<group>"; };
+		233B1F0B23C2DD0800028A50 /* sliceLife@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliceLife@2x.png"; sourceTree = "<group>"; };
+		233B1F0C23C2DD0800028A50 /* sliceBomb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliceBomb@2x.png"; sourceTree = "<group>"; };
+		233B1F0D23C2DD0800028A50 /* sliceLifeGone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliceLifeGone@2x.png"; sourceTree = "<group>"; };
+		233B1F0E23C2DD0800028A50 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		233B1F0F23C2DD0800028A50 /* wrong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.caf; sourceTree = "<group>"; };
+		233B1F1023C2DD0800028A50 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		233B1F1123C2DD0800028A50 /* launch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = launch.caf; sourceTree = "<group>"; };
+		233B1F1223C2DD0800028A50 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
+		233B1F1323C2DD0800028A50 /* sliceBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliceBackground@2x.png"; sourceTree = "<group>"; };
+		233B1F1423C2DD0800028A50 /* sliceHitEnemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitEnemy.sks; sourceTree = "<group>"; };
+		233B1F1523C2DD0800028A50 /* sliceBombFuse.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sliceBombFuse.caf; sourceTree = "<group>"; };
+		233B1F1623C2DD0800028A50 /* sliceHitBomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitBomb.sks; sourceTree = "<group>"; };
+		233B1F1723C2DD0800028A50 /* penguin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "penguin@2x.png"; sourceTree = "<group>"; };
+		233B1F1823C2DD0800028A50 /* swoosh3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh3.caf; sourceTree = "<group>"; };
+		233B1F1923C2DD0800028A50 /* swoosh2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh2.caf; sourceTree = "<group>"; };
+		233B1F1A23C2DD0800028A50 /* swoosh1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh1.caf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		233B1EEB23C2DC3600028A50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		233B1EE523C2DC3600028A50 = {
+			isa = PBXGroup;
+			children = (
+				233B1EF023C2DC3600028A50 /* day-23-swifty-ninja */,
+				233B1EEF23C2DC3600028A50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		233B1EEF23C2DC3600028A50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				233B1EEE23C2DC3600028A50 /* day-23-swifty-ninja.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		233B1EF023C2DC3600028A50 /* day-23-swifty-ninja */ = {
+			isa = PBXGroup;
+			children = (
+				233B1EF123C2DC3600028A50 /* AppDelegate.swift */,
+				233B1EF323C2DC3600028A50 /* GameScene.sks */,
+				233B1EF723C2DC3600028A50 /* GameScene.swift */,
+				233B1EF923C2DC3600028A50 /* GameViewController.swift */,
+				233B1EFB23C2DC3600028A50 /* Main.storyboard */,
+				233B1EFE23C2DC3800028A50 /* Assets.xcassets */,
+				233B1F0023C2DC3800028A50 /* LaunchScreen.storyboard */,
+				233B1F0323C2DC3800028A50 /* Info.plist */,
+				233B1F0923C2DD0800028A50 /* Content */,
+			);
+			path = "day-23-swifty-ninja";
+			sourceTree = "<group>";
+		};
+		233B1F0923C2DD0800028A50 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				233B1F0A23C2DD0800028A50 /* sliceFuse.sks */,
+				233B1F0B23C2DD0800028A50 /* sliceLife@2x.png */,
+				233B1F0C23C2DD0800028A50 /* sliceBomb@2x.png */,
+				233B1F0D23C2DD0800028A50 /* sliceLifeGone@2x.png */,
+				233B1F0E23C2DD0800028A50 /* spark.png */,
+				233B1F0F23C2DD0800028A50 /* wrong.caf */,
+				233B1F1023C2DD0800028A50 /* whack.caf */,
+				233B1F1123C2DD0800028A50 /* launch.caf */,
+				233B1F1223C2DD0800028A50 /* explosion.caf */,
+				233B1F1323C2DD0800028A50 /* sliceBackground@2x.png */,
+				233B1F1423C2DD0800028A50 /* sliceHitEnemy.sks */,
+				233B1F1523C2DD0800028A50 /* sliceBombFuse.caf */,
+				233B1F1623C2DD0800028A50 /* sliceHitBomb.sks */,
+				233B1F1723C2DD0800028A50 /* penguin@2x.png */,
+				233B1F1823C2DD0800028A50 /* swoosh3.caf */,
+				233B1F1923C2DD0800028A50 /* swoosh2.caf */,
+				233B1F1A23C2DD0800028A50 /* swoosh1.caf */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		233B1EED23C2DC3600028A50 /* day-23-swifty-ninja */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 233B1F0623C2DC3800028A50 /* Build configuration list for PBXNativeTarget "day-23-swifty-ninja" */;
+			buildPhases = (
+				233B1EEA23C2DC3600028A50 /* Sources */,
+				233B1EEB23C2DC3600028A50 /* Frameworks */,
+				233B1EEC23C2DC3600028A50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "day-23-swifty-ninja";
+			productName = "day-23-swifty-ninja";
+			productReference = 233B1EEE23C2DC3600028A50 /* day-23-swifty-ninja.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		233B1EE623C2DC3600028A50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = kinnerapriyap;
+				TargetAttributes = {
+					233B1EED23C2DC3600028A50 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 233B1EE923C2DC3600028A50 /* Build configuration list for PBXProject "day-23-swifty-ninja" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 233B1EE523C2DC3600028A50;
+			productRefGroup = 233B1EEF23C2DC3600028A50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				233B1EED23C2DC3600028A50 /* day-23-swifty-ninja */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		233B1EEC23C2DC3600028A50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233B1F2A23C2DD0800028A50 /* swoosh2.caf in Resources */,
+				233B1EFD23C2DC3600028A50 /* Main.storyboard in Resources */,
+				233B1F2823C2DD0800028A50 /* penguin@2x.png in Resources */,
+				233B1F2223C2DD0800028A50 /* launch.caf in Resources */,
+				233B1F2923C2DD0800028A50 /* swoosh3.caf in Resources */,
+				233B1F1F23C2DD0800028A50 /* spark.png in Resources */,
+				233B1F1C23C2DD0800028A50 /* sliceLife@2x.png in Resources */,
+				233B1F2323C2DD0800028A50 /* explosion.caf in Resources */,
+				233B1F1E23C2DD0800028A50 /* sliceLifeGone@2x.png in Resources */,
+				233B1EF423C2DC3600028A50 /* GameScene.sks in Resources */,
+				233B1F1D23C2DD0800028A50 /* sliceBomb@2x.png in Resources */,
+				233B1F1B23C2DD0800028A50 /* sliceFuse.sks in Resources */,
+				233B1F2423C2DD0800028A50 /* sliceBackground@2x.png in Resources */,
+				233B1EFF23C2DC3800028A50 /* Assets.xcassets in Resources */,
+				233B1F2B23C2DD0800028A50 /* swoosh1.caf in Resources */,
+				233B1F2123C2DD0800028A50 /* whack.caf in Resources */,
+				233B1F2623C2DD0800028A50 /* sliceBombFuse.caf in Resources */,
+				233B1F2523C2DD0800028A50 /* sliceHitEnemy.sks in Resources */,
+				233B1F2023C2DD0800028A50 /* wrong.caf in Resources */,
+				233B1F0223C2DC3800028A50 /* LaunchScreen.storyboard in Resources */,
+				233B1F2723C2DD0800028A50 /* sliceHitBomb.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		233B1EEA23C2DC3600028A50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233B1EF823C2DC3600028A50 /* GameScene.swift in Sources */,
+				233B1EFA23C2DC3600028A50 /* GameViewController.swift in Sources */,
+				233B1EF223C2DC3600028A50 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		233B1EFB23C2DC3600028A50 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				233B1EFC23C2DC3600028A50 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		233B1F0023C2DC3800028A50 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				233B1F0123C2DC3800028A50 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		233B1F0423C2DC3800028A50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		233B1F0523C2DC3800028A50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		233B1F0723C2DC3800028A50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "day-23-swifty-ninja/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kinnerapriyap.day-23-swifty-ninja";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		233B1F0823C2DC3800028A50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "day-23-swifty-ninja/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kinnerapriyap.day-23-swifty-ninja";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		233B1EE923C2DC3600028A50 /* Build configuration list for PBXProject "day-23-swifty-ninja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				233B1F0423C2DC3800028A50 /* Debug */,
+				233B1F0523C2DC3800028A50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		233B1F0623C2DC3800028A50 /* Build configuration list for PBXNativeTarget "day-23-swifty-ninja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				233B1F0723C2DC3800028A50 /* Debug */,
+				233B1F0823C2DC3800028A50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 233B1EE623C2DC3600028A50 /* Project object */;
+}
