@@ -15,7 +15,7 @@ enum CollisionTypes: UInt32 {
     case player = 4
 }
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var buildings = [BuildingNode]()
     
@@ -29,9 +29,106 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         backgroundColor = UIColor(hue: 0.669, saturation: 0.99, brightness: 0.67, alpha: 1)
+        
+        physicsWorld.contactDelegate = self
 
         createBuildings()
         createPlayers()
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let firstBody: SKPhysicsBody
+        let secondBody: SKPhysicsBody
+
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+
+        guard let firstNode = firstBody.node else { return }
+        guard let secondNode = secondBody.node else { return }
+
+        if firstNode.name == "banana" && secondNode.name == "building" {
+            bananaHit(building: secondNode, atPoint: contact.contactPoint)
+        }
+
+        if firstNode.name == "banana" && secondNode.name == "player1" {
+            destroy(player: player1)
+        }
+
+        if firstNode.name == "banana" && secondNode.name == "player2" {
+            destroy(player: player2)
+        }
+    }
+    
+    func bananaHit(building: SKNode, atPoint contactPoint: CGPoint) {
+        guard let building = building as? BuildingNode else { return }
+        let buildingLocation = convert(contactPoint, to: building)
+        building.hit(at: buildingLocation)
+
+        if let explosion = SKEmitterNode(fileNamed: "hitBuilding") {
+            explosion.position = contactPoint
+            addChild(explosion)
+        }
+
+        banana.name = ""
+        banana.removeFromParent()
+        banana = nil
+
+        changePlayer()
+    }
+    
+    func hit(at point: CGPoint) {
+        let convertedPoint = CGPoint(x: point.x + size.width / 2.0, y: abs(point.y - (size.height / 2.0)))
+
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let img = renderer.image { ctx in
+            currentImage.draw(at: .zero)
+
+            ctx.cgContext.addEllipse(in: CGRect(x: convertedPoint.x - 32, y: convertedPoint.y - 32, width: 64, height: 64))
+            ctx.cgContext.setBlendMode(.clear)
+            ctx.cgContext.drawPath(using: .fill)
+        }
+
+        texture = SKTexture(image: img)
+        currentImage = img
+
+        configurePhysics()
+    }
+    
+    func destroy(player: SKSpriteNode) {
+        if let explosion = SKEmitterNode(fileNamed: "hitPlayer") {
+            explosion.position = player.position
+            addChild(explosion)
+        }
+
+        player.removeFromParent()
+        banana.removeFromParent()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let newGame = GameScene(size: self.size)
+            newGame.viewController = self.viewController
+            self.viewController.currentGame = newGame
+
+            self.changePlayer()
+            newGame.currentPlayer = self.currentPlayer
+
+            let transition = SKTransition.doorway(withDuration: 1.5)
+            self.view?.presentScene(newGame, transition: transition)
+        }
+    }
+    
+    func changePlayer() {
+        if currentPlayer == 1 {
+            currentPlayer = 2
+        } else {
+            currentPlayer = 1
+        }
+
+        viewController.activatePlayer(number: currentPlayer)
     }
     
     func createPlayers() {
@@ -131,5 +228,15 @@ class GameScene: SKScene {
     
     func deg2rad(degrees: Int) -> Double {
         return Double(degrees) * Double.pi / 180
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        guard banana != nil else { return }
+
+        if abs(banana.position.y) > 1000 {
+            banana.removeFromParent()
+            banana = nil
+            changePlayer()
+        }
     }
 }
