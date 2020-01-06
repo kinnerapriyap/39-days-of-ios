@@ -13,6 +13,8 @@
 		233B1F7323C2EB4300028A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F7123C2EB4300028A50 /* Main.storyboard */; };
 		233B1F7523C2EB4400028A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F7423C2EB4400028A50 /* Assets.xcassets */; };
 		233B1F7823C2EB4400028A50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F7623C2EB4400028A50 /* LaunchScreen.storyboard */; };
+		233B1F8123C2EB7500028A50 /* mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F7F23C2EB7500028A50 /* mouse.png */; };
+		233B1F8223C2EB7500028A50 /* mouse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233B1F8023C2EB7500028A50 /* mouse@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		233B1F7423C2EB4400028A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		233B1F7723C2EB4400028A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		233B1F7923C2EB4400028A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		233B1F7F23C2EB7500028A50 /* mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse.png; sourceTree = "<group>"; };
+		233B1F8023C2EB7500028A50 /* mouse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouse@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				233B1F7423C2EB4400028A50 /* Assets.xcassets */,
 				233B1F7623C2EB4400028A50 /* LaunchScreen.storyboard */,
 				233B1F7923C2EB4400028A50 /* Info.plist */,
+				233B1F7F23C2EB7500028A50 /* mouse.png */,
+				233B1F8023C2EB7500028A50 /* mouse@2x.png */,
 			);
 			path = "day-27-core-graphics";
 			sourceTree = "<group>";
@@ -125,7 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233B1F8223C2EB7500028A50 /* mouse@2x.png in Resources */,
 				233B1F7823C2EB4400028A50 /* LaunchScreen.storyboard in Resources */,
+				233B1F8123C2EB7500028A50 /* mouse.png in Resources */,
 				233B1F7523C2EB4400028A50 /* Assets.xcassets in Resources */,
 				233B1F7323C2EB4300028A50 /* Main.storyboard in Resources */,
 			);
