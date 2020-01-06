@@ -55,6 +55,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
 
         activeWebView = webView
         webView.layer.borderWidth = 3
+        
+        updateUI(for: webView)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -104,6 +106,25 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.horizontalSizeClass == .compact {
+            stackView.axis = .vertical
+        } else {
+            stackView.axis = .horizontal
+        }
+    }
+    
+    func updateUI(for webView: WKWebView) {
+        title = webView.title
+        addressBar.text = webView.url?.absoluteString ?? ""
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if webView == activeWebView {
+            updateUI(for: webView)
+        }
     }
 }
 
