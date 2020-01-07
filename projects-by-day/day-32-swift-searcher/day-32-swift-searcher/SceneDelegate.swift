@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreSpotlight
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -48,6 +49,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        if userActivity.activityType == CSSearchableItemActionType {
+            if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+                if let navigationController = window?.rootViewController as? UINavigationController {
+                    if let viewController = navigationController.topViewController as? ViewController {
+                        viewController.showTutorial(Int(uniqueIdentifier)!)
+                    }
+                }
+            }
+        }
+    }
 }
 
