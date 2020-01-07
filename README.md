@@ -6,6 +6,4 @@
 
 _Start date_: Nov 23, 2019
 
-_Expected end date_: Dec 31, 2019
-
-**Status**: Day 25 _(last updated Dec 17, 2019)_
+**Status**: Project 33 _(last updated Jan 7, 2020)_
