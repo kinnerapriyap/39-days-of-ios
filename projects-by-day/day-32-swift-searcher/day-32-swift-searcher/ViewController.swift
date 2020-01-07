@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UITableViewController {
     
@@ -39,6 +40,10 @@ class ViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showTutorial(indexPath.row)
+    }
+    
     func makeAttributedString(title: String, subtitle: String) -> NSAttributedString {
         let titleAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline), NSAttributedString.Key.foregroundColor: UIColor.purple]
         let subtitleAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .subheadline)]
@@ -49,6 +54,16 @@ class ViewController: UITableViewController {
         titleString.append(subtitleString)
 
         return titleString
+    }
+    
+    func showTutorial(_ which: Int) {
+        if let url = URL(string: "https://www.hackingwithswift.com/read/\(which + 1)") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
     }
 }
 
